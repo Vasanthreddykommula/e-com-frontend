@@ -47,8 +47,19 @@ function handleChange(e){
     let {name,value,files}=e.target
     if(name!="re-password"){
         if(name=="image"){
-            value=files[0]
+            // value=files[0]
+            value=e.target.files[0]
+            if(value instanceof Blob){
+                const reader=new FileReader();
+                reader.onload=function(){
+                    form.style.backgroundImage=`url(${reader.result})`
+                };
+                reader.readAsDataURL(value)
+            }else{
+                console.log("No valid file selected");
+            }
             state.setState(name,value)
+
         }else{
             state.setState(name,value)
         }
