@@ -31,3 +31,43 @@ window.addEventListener("popstate",(e)=>{
     }
 })
 
+
+let state={
+    setState(name,value){
+        this[name]=value
+    }
+}
+
+const form=document.querySelector("form")
+const inputs=document.querySelectorAll("input")
+const textarea=document.querySelector("textarea")
+
+
+function handleChange(e){
+    let {name,value,files}=e.target
+    if(name!="re-password"){
+        if(name=="image"){
+            value=files[0]
+            state.setState(name,value)
+        }else{
+            state.setState(name,value)
+        }
+    }
+    
+
+}
+
+function handleSubmit(e){
+    e.preventDefault()
+    console.log(state);
+    
+}
+
+form.addEventListener("submit",handleSubmit)
+
+inputs.forEach((input)=>{
+    input.addEventListener("change",handleChange)
+})
+
+textarea.addEventListener("change",handleChange)
+
