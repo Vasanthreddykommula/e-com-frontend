@@ -47,26 +47,22 @@ function handleChange(e){
     let {name,value,files}=e.target
     if(name!="re-password"){
         if(name=="image"){
-            // value=files[0]
-            value=e.target.files[0]
-            if(value instanceof Blob){
+            value=files[0]
+        
                 const reader=new FileReader();
                 reader.onload=function(){
                     form.style.backgroundImage=`url(${reader.result})`
                 };
                 reader.readAsDataURL(value)
-            }else{
-                console.log("No valid file selected");
-            }
+            
             state.setState(name,value)
 
-        }else{
+    }else{
             state.setState(name,value)
-        }
     }
-    
+    }
+}    
 
-}
 
 function handleSubmit(e){
     e.preventDefault()
@@ -76,7 +72,7 @@ function handleSubmit(e){
 
 form.addEventListener("submit",handleSubmit)
 
-inputs.forEach((input)=>{
+inputs.forEach(input=>{
     input.addEventListener("change",handleChange)
 })
 
