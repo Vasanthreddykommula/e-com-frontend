@@ -44,7 +44,6 @@ function handleChange(e){
     }
 
 
-
 function handleSubmit(e){
     e.preventDefault()
     let {email,password}=state
@@ -65,7 +64,7 @@ function handleSubmit(e){
         // console.log(data);
         if(res.status==200){
             alert(`${data.message}`)
-            history.pushState({},"/home")
+            history.pushState({},"","/home")
             root.innerHTML=home()
         }else{
             alert(`${data.message}`)

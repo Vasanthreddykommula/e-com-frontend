@@ -70,7 +70,6 @@ function handleChange(e){
         }
     }
   
-
 function checkPassword(e){
     let {name,value}=e.target
     if(name=="re-password"){
