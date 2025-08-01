@@ -39,6 +39,7 @@ body{
     border: 2px solid #efefef;
     border-radius: 10px;
     padding: 0px 30px;
+    transition: all 2s linear;
 
 
 }
@@ -113,8 +114,29 @@ body{
     
 }
 
+.register>form>div>select{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    background-color: transparent;
+    border: none;
+}
+.register>form>.removeborder{
+    border: none;
+
+}
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.register>form>div>select>option{
+    background-color: skyblue;
+}
 
 
+
+/*   login page */
 
 .login{
     height: 100%;
@@ -140,6 +162,8 @@ body{
     border: 2px solid #efefef;
     border-radius: 10px;
     padding: 0px 30px;
+    
+    
     
 }
 .login>form>div{
@@ -192,7 +216,10 @@ body{
     
 }
 
-
 /* #formlog{
 height: 40%;
 } */
+
+
+
+/* home page */
