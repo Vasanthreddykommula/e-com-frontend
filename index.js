@@ -1,4 +1,5 @@
 
+import addproduct, { handleProductBind } from "./addproduct.js"
 import login, { handleLoginBind } from "./login.js"
 import register, { handleRegisterBind } from "./register.js"
 
@@ -8,6 +9,7 @@ const allAnchor=document.querySelectorAll("a")
 const router={
     "/login":[login,handleLoginBind],
     "/register":[register,handleRegisterBind],
+    "/addproduct":[addproduct,handleProductBind]
   
 }
 
